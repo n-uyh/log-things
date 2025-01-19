@@ -21,6 +21,8 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git push https://${{ secrets.GH_PAT }}@github.com/n-uyh/log-things.git
+        git config --global push.default simple
 
     - name: Create and checkout a new branch
       run: |
