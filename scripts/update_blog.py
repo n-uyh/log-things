@@ -13,8 +13,6 @@ if not os.path.exists(posts_dir):
 
 repo = git.Repo(repo_path)
 
-repo.git.pull('origin','main')
-
 feed = feedparser.parse(rss_url)
 
 for entry in feed.entries:
@@ -31,4 +29,4 @@ for entry in feed.entries:
   repo.git.add(file_path)
   repo.git.commit('-m', f'Add post: {entry.title}')
 
-repo.git.push('origin','main')
+repo.git.push('origin','logs')
