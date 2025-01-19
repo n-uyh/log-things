@@ -3,7 +3,7 @@ name: Update Velog Posts
 on:
   push:
     branches:
-      - logs
+      - main
   schedule:
     - cron: '0 16 * * *'
 
