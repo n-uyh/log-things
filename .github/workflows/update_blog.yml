@@ -3,9 +3,9 @@ name: Update Velog Posts
 on:
   push:
     branches:
-      - main
+      - logs
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 16 * * *'
 
 jobs:
   update_blog:
