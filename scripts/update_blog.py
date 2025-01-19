@@ -28,7 +28,7 @@ for entry in feed.entries:
 
   if os.path.exists(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
-      if file.read() === content:
+      if file.read() == content:
         continue
         
   with open(file_path, 'w', encoding='utf-8') as file:
