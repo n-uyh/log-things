@@ -15,7 +15,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        ref: logs
         fetch-depth: 0
 
     - name: Push changes
