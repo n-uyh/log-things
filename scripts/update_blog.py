@@ -15,6 +15,8 @@ repo = git.Repo(repo_path)
 
 feed = feedparser.parse(rss_url)
 
+repo.git.checkout('logs')
+
 for entry in feed.entries:
   file_name = entry.title
   file_name = file_name.replace('/', '-')
@@ -22,11 +24,21 @@ for entry in feed.entries:
   file_name += '.md'
   file_path = os.path.join(posts_dir, file_name)
 
-  if not os.path.exists(file_path):
-    with open(file_path, 'w', encoding='utf-8') as file:
-      file.write(entry.description)
+  content = entry.description
+
+  if os.path.exists(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+      if file.read() === content:
+        continue
+        
+  with open(file_path, 'w', encoding='utf-8') as file:
+    file.write(content)
 
   repo.git.add(file_path)
-  repo.git.commit('-m', f'Add post: {entry.title}')
 
-repo.git.push('origin','logs')
+current_date = datetime.now().strftime('%Y-%m-%d')
+if repo.is_dirty():
+  repo.git.commit('-m', f'Add posts from Velog on {current_date}')
+  repo.git.push()
+else:
+  print("No changes to commit")
