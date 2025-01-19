@@ -32,7 +32,7 @@ jobs:
         pip install feedparser gitpython
 
     - name: Pull latest changes
-      run: git pull origin main
+      run: git pull origin main --rebase
 
     - name: Run script
       run: python scripts/update_blog.py
