@@ -31,4 +31,4 @@ for entry in feed.entries:
   repo.git.add(file_path)
   repo.git.commit('-m', f'Add post: {entry.title}')
 
-repo.git.push('origin','logs')
+repo.git.push('origin','main')
