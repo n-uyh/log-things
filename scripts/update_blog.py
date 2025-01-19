@@ -40,6 +40,6 @@ for entry in feed.entries:
 current_date = datetime.now().strftime('%Y-%m-%d')
 if repo.is_dirty():
   repo.git.commit('-m', f'Add posts from Velog on {current_date}')
-  repo.git.push()
+  repo.git.push('--set-upstream', 'origin', 'logs')
 else:
   print("No changes to commit")
