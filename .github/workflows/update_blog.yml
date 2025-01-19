@@ -15,6 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
+        ref: logs
         fetch-depth: 0
 
     - name: Push changes
@@ -22,6 +23,11 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
+    - name: Create and checkout a new branch
+      run: |
+        git checkout -b logs
+        git push origin logs
+        
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -31,8 +37,8 @@ jobs:
       run: |
         pip install feedparser gitpython
 
-    - name: Pull latest changes
-      run: git pull origin main --rebase
-
     - name: Run script
       run: python scripts/update_blog.py
+
+    - name: Force delete local logs branch
+      run: git branch -D logs
