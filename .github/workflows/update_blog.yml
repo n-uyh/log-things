@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '58 14 * * *'
 
 jobs:
   update_blog:
