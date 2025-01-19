@@ -14,12 +14,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
 
     - name: Push changes
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git push https://${{ secrets.GH_PAT }}@github.com/n-uyh/log-things.git
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -29,6 +30,9 @@ jobs:
     - name: Install dependencies
       run: |
         pip install feedparser gitpython
+
+    - name: Pull latest changes
+      run: git pull origin main
 
     - name: Run script
       run: python scripts/update_blog.py
