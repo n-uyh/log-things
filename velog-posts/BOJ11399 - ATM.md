@@ -11,7 +11,7 @@
 <h3 id="시간의-합">시간의 합?</h3>
 <p>$$
 \begin{aligned}
-\displaystyle\sum_{i=0}^{n}{P} &amp;= P_{1} + (P_{1} + P_{2}) + (P_{1} + P_{2} + P_{3}) + ... + (P_{1} + P_{2} + P_{3} + ...+ P_{n})\
+\displaystyle\sum{P} &amp;= P_{1} + (P_{1} + P_{2}) + (P_{1} + P_{2} + P_{3}) + ... + (P_{1} + P_{2} + P_{3} + ...+ P_{n})\
  &amp;= (P_{1} \times n) + (P_{2} \times (n-1)) + (P_{3} \times (n-2)) + ... + (P_{n} \times 1)
 \end{aligned}
 $$</p>
