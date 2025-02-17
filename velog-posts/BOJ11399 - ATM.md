@@ -5,6 +5,8 @@
 <img alt="" src="https://velog.velcdn.com/images/edocnuyh/post/8dc9bc0f-b493-4162-97cf-88fb8a521ef1/image.png" /></p>
 <br />
 
+
+
 <h2 id="🧐-생각">🧐 생각</h2>
 <h3 id="최솟값">최솟값?</h3>
 <p>시간이 짧게 걸리는 사람부터 돈을 뽑아야 하지 않을까?</p>
